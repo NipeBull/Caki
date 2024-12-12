@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caki | Designer Visual Especialista</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600&display=swap');
+        
+        body {
+            font-family: 'Quicksand', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            line-height: 1.8;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #b8c6db 0%, #8ea4c8 100%);
+            color: #333;
+            padding: 150px 0;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1 {
+            font-size: 4.5em;
+            margin-bottom: 20px;
+            font-weight: 600;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            animation: fadeIn 1.5s ease;
+        }
+
+        .subtitulo {
+            font-size: 2em;
+            color: #fff;
+            font-weight: 500;
+            animation: fadeIn 2s ease;
+            margin-bottom: 40px;
+        }
+
+        .destaque-header {
+            background: rgba(255,255,255,0.95);
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 30px;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .portfolio {
+            padding: 100px 0;
+            background: #fff;
+        }
+
+        .section-titulo {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-titulo h2 {
+            font-size: 3em;
+            color: #b8c6db;
+            margin-bottom: 20px;
+        }
+
+        .section-titulo p {
+            font-size: 1.2em;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .grid-portfolio {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            padding: 40px 0;
+        }
+
+        .item-portfolio {
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .item-portfolio:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 12px 25px rgba(184,198,219,0.4);
+        }
+
+        .item-portfolio img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .item-portfolio:hover img {
+            transform: scale(1.08);
+        }
+
+        .item-info {
+            padding: 30px;
+            background: #fff;
+        }
+
+        .item-info h3 {
+            color: #b8c6db;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+            font-weight: 600;
+        }
+
+        .item-info p {
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+
+        .sobre {
+            background-color: #f9f9f9;
+            padding: 120px 0;
+        }
+
+        .sobre-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .sobre h2 {
+            font-size: 3em;
+            color: #b8c6db;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        .sobre p {
+            font-size: 1.2em;
+            margin-bottom: 25px;
+        }
+
+        .contato {
+            padding: 120px 0;
+            background: linear-gradient(135deg, #b8c6db 0%, #8ea4c8 100%);
+            color: #fff;
+            text-align: center;
+        }
+
+        .contato h2 {
+            font-size: 3.5em;
+            margin-bottom: 30px;
+            color: #fff;
+        }
+
+        .contato p {
+            font-size: 1.3em;
+            margin-bottom: 40px;
+        }
+
+        .botao {
+            display: inline-block;
+            padding: 18px 40px;
+            background: #fff;
+            color: #b8c6db;
+            text-decoration: none;
+            border-radius: 30px;
+            margin-top: 30px;
+            font-weight: 600;
+            font-size: 1.2em;
+            transition: all 0.3s ease;
+            border: 3px solid transparent;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .botao:hover {
+            background: transparent;
+            border: 3px solid #fff;
+            color: #fff;
+            transform: translateY(-5px);
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 35px;
+        }
+
+        .skill-tag {
+            background: #fff;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-size: 1.1em;
+            color: #b8c6db;
+            transition: all 0.3s ease;
+            border: 2px solid #b8c6db;
+            font-weight: 500;
+        }
+
+        .skill-tag:hover {
+            background: #b8c6db;
+            color: #fff;
+            transform: scale(1.05);
+        }
+
+        .beneficios {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .beneficio-item {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            color: #2a2a2a;
+        }
+
+        .beneficio-item i {
+            font-size: 2.5em;
+            color: #84c4f9;
+            margin-bottom: 20px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Caki</h1>
+            <p class="subtitulo">Designer Visual Especialista | Transformando Visões em Realidade</p>
+            <div class="destaque-header">
+                <p>✨ Todos os projetos finalizados e apreciados</p>
+                <p>🏆 A mais escolhida entre os designers</p>
+                <p>💡 Soluções criativas e personalizadas para seu negócio</p>
+            </div>
+        </div>
+    </header>
+
+    <section class="portfolio">
+        <div class="container">
+            <div class="section-titulo">
+                <h2>Projetos que Inspiram</h2>
+                <p>Cada projeto é uma história única, contada através do design. Confira alguns trabalhos que transformaram a visão dos meus clientes em realidade.</p>
+            </div>
+            <div class="grid-portfolio">
+                <div class="item-portfolio">
+                    <img src="https://via.placeholder.com/400x300" alt="Projeto 1">
+                    <div class="item-info">
+                        <h3>Design Visual Estratégico</h3>
+                        <p>Criações que elevam sua marca ao próximo nível, combinando estética sofisticada com estratégia de comunicação eficaz.</p>
+                    </div>
+                </div>
+                <div class="item-portfolio">
+                    <img src="https://via.placeholder.com/400x300" alt="Projeto 2">
+                    <div class="item-info">
+                        <h3>Arte Digital Inovadora</h3>
+                        <p>Designs únicos que capturam a essência da sua marca e criam conexões emocionais com seu público.</p>
+                    </div>
+                </div>
+                <div class="item-portfolio">
+                    <img src="https://via.placeholder.com/400x300" alt="Projeto 3">
+                    <div class="item-info">
+                        <h3>Ilustrações Exclusivas</h3>
+                        <p>Arte personalizada que conta sua história de forma autêntica e memorável, destacando seu diferencial no mercado.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="sobre">
+        <div class="container">
+            <div class="sobre-content">
+                <div>
+                    <h2>Sobre Mim</h2>
+                    <p>Olá! Me chamo Caki, sou uma designer apaixonada pela arte de transformar ideias em realidade visual. Desde que descobri minha paixão pelo design, percebi que tinha não apenas o talento, mas também a necessidade de ajudar marcas a alcançarem seu verdadeiro potencial através do design.</p>
+                    <p>Escolhi o apelido "Caki" como minha assinatura profissional, pois representa minha personalidade única e criativa. Minha jornada no design começou com a pura paixão por criar e evoluiu para uma missão: elevar a qualidade visual das marcas que confiam em meu trabalho.</p>
+                    <div class="skills-list">
+                        <span class="skill-tag"><i class="fas fa-paint-brush"></i> Design Visual</span>
+                        <span class="skill-tag"><i class="fab fa-adobe"></i> Adobe Photoshop</span>
+                        <span class="skill-tag"><i class="fab fa-adobe"></i> Adobe Illustrator</span>
+                        <span class="skill-tag"><i class="fas fa-file-word"></i> Microsoft Office</span>
+                        <span class="skill-tag"><i class="fas fa-palette"></i> Posters</span>
+                        <span class="skill-tag"><i class="fas fa-bullseye"></i> Branding</span>
+                    </div>
+                </div>
+                <img src="f6b99b5c-86da-480b-8cff-9739fb60fffb.jpeg" alt="Caki - Designer Visual Especialista">
+            </div>
+        </div>
+    </section>
+
+    <section class="contato">
+        <div class="container">
+            <h2>Pronta para Transformar sua Visão em Realidade?</h2>
+            <p>Vamos criar algo extraordinário juntos. Seu projeto merece um design que se destaque.</p>
+            
+            <div class="beneficios">
+                <div class="beneficio-item">
+                    <i class="fas fa-clock"></i>
+                    <h3>Entregas no Prazo</h3>
+                    <p>Compromisso com deadlines e comunicação clara durante todo o processo.</p>
+                </div>
+                <div class="beneficio-item">
+                    <i class="fas fa-star"></i>
+                    <h3>Qualidade Premium</h3>
+                    <p>Designs exclusivos e de alta qualidade que elevam sua marca.</p>
+                </div>
+                <div class="beneficio-item">
+                    <i class="fas fa-handshake"></i>
+                    <h3>Suporte Dedicado</h3>
+                    <p>Acompanhamento personalizado em todas as etapas do projeto.</p>
+                </div>
+            </div>
+            
+            <a href="https://w.app/ajM2XS" class="botao">Iniciar Projeto Agora <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </section>
+</body>
+</html>
